@@ -38,7 +38,7 @@
                 <ul>
                     <li><a href="indexLocal.html">Inicio</a></li>
                     <li><a href="#">Local</a></li>
-                    <li><a href="#">Empleados</a></li>
+                    <li><a href="#">Ventas</a></li>
                 </ul>
             </div>
         </div>
