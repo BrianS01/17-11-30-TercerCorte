@@ -37,7 +37,7 @@
                 <ul>
                     <li><a href="indexLocal.html">Inicio</a></li>
                     <li><a href="#">Local</a></li>
-                    <li><a href="#">Empleados</a></li>
+                    <li><a href="#">Productos</a></li>
                 </ul>
             </div>
         </div>
@@ -47,10 +47,10 @@
                     <div id="gallery">
                         <header class="heading">Gallery Title Goes Here</header>
                     </div>
-                    
                     <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-                        <input type="button" value="Listado Empleados" onclick="window.location.href='inventarioListarLocal.jsp'" />
+                        <input type="button" value="Listado Productos" onclick="window.location.href='inventarioListarLocal.jsp'" />
                     </button>
+                    <br>
                     <div class="wrapper row4">
                         <footer id="footer" class="hoc clear"> 
                             <div class="one_quarter first">

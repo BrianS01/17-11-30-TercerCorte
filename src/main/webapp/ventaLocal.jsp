@@ -45,9 +45,17 @@
             <main class="hoc container clear"> 
                 <div class="content"> 
                     <div id="gallery">
-                        <figure>
-                            <header class="heading">Gallery Title Goes Here</header>
-                    </div><div class="wrapper row4">
+                        
+                        <header class="heading">Ventas</header>
+                    </div>
+                    <div>
+                        <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+                            <input type="button" value="Listado Ventas" onclick="window.location.href='ventasListarLocal.jsp'" />
+                        </button>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="wrapper row4">
                         <footer id="footer" class="hoc clear"> 
                             <div class="one_quarter first">
                                 <h6 class="title"> </h6>
