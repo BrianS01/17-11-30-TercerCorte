@@ -48,6 +48,37 @@
                         <header class="heading">Empleados</header>
                     </div>
                     <div>
+                        <table border=1>
+            <thead>
+                <tr>
+                    <th>IdEmpleado</th>
+                    <th>Nombre</th>
+                    <th colspan=2>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    List<User> users = (List<User>) request.getAttribute("users");
+                    if (users != null)
+                    {
+                        for (User user : users)
+                        {
+                %>
+                <tr>
+                    <td><%=user.getUserid()%></td>
+                    <td><%=user.getFirstName()%></td>
+                    <td><%=user.getLastName()%></td>
+                    <td><%=user.getDob()%></td>
+                    <td><%=user.getEmail()%></td>
+                    <td><a href="UserController?action=edit&userId=<%=user.getUserid()%>">Actualizar</a></td>
+                    <td><a href="UserController?action=delete&userId=<%=user.getUserid()%>">Borrar</a></td>
+                </tr>
+                <%
+                        }
+                    }
+                %>
+            </tbody>
+        </table>
                         <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
                             <input type="button" value="Listado Empleados" onclick="window.location.href='personalListarLocal.jsp'" />
                         </button>
