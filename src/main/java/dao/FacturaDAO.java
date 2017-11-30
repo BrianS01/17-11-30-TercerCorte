@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Detalle;
+import modelo.Factura;
 import util.DbUtil;
 
 public class FacturaDAO
@@ -25,14 +25,16 @@ public class FacturaDAO
         connection = DbUtil.getConnection();
     }
 
-    public void addUser(Detalle user)
+    public void addUser(Factura user)
     {
         try
         {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into detalle(nombreCliente, cedula, fecha) values (?, ?, ?)");
-            preparedStatement.setString(1, user.getNombreCliente());
-            preparedStatement.setInt(2, user.getCedula());
-            preparedStatement.setString(3, user.getFecha());
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into factura(idDetalle, idProducto, cantidad, total, metodoPago) values (?, ?, ?, ?, ?)");
+            preparedStatement.setInt(1, user.getIdDetalle());
+            preparedStatement.setInt(2, user.getIdProducto());
+            preparedStatement.setInt(3, user.getCantidad());
+            preparedStatement.setInt(4, user.getTotal());
+            preparedStatement.setString(5, user.getMetodoPago());
             preparedStatement.executeUpdate();
         }
         catch (SQLException e)
@@ -41,12 +43,12 @@ public class FacturaDAO
         }
     }
 
-    public void deleteUser(int idDetalle)
+    public void deleteUser(int idFactura)
     {
         try
         {
-            PreparedStatement preparedStatement = connection.prepareStatement("delete from detalle where idDetalle=?");
-            preparedStatement.setInt(1, idDetalle);
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from factura where idFactura=?");
+            preparedStatement.setInt(1, idFactura);
             preparedStatement.executeUpdate();
         }
         catch (SQLException e)
@@ -55,14 +57,16 @@ public class FacturaDAO
         }
     }
 
-    public void updateUser(Detalle user)
+    public void updateUser(Factura user)
     {
         try 
         {
-            PreparedStatement preparedStatement = connection.prepareStatement("update detalle set nombreCliente=?, cedula=?, fecha=?" + "where idDetalle=?");
-            preparedStatement.setString(1, user.getNombreCliente());
-            preparedStatement.setInt(2, user.getCedula());
-            preparedStatement.setString(3, user.getFecha());
+            PreparedStatement preparedStatement = connection.prepareStatement("update factura set idDetalle=?, idProducto=?, cantidad=?, total=?, metodoPago=?" + "where idFactura=?");
+            preparedStatement.setInt(1, user.getIdDetalle());
+            preparedStatement.setInt(2, user.getIdProducto());
+            preparedStatement.setInt(3, user.getCantidad());
+            preparedStatement.setInt(4, user.getTotal());
+            preparedStatement.setString(5, user.getMetodoPago());
             preparedStatement.executeUpdate();
         }
         catch (SQLException e)
@@ -71,23 +75,25 @@ public class FacturaDAO
         }
     }
 
-    public List<Detalle> getAllUsers()
+    public List<Factura> getAllUsers()
     {
-        List<Detalle> users = new ArrayList<Detalle>();
+        List<Factura> users = new ArrayList<Factura>();
         
         try
         {
             System.out.println("Llegue hasta aca");
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from detalle");
+            ResultSet rs = statement.executeQuery("select * from factura");
             
             while (rs.next())
             {
-                Detalle user = new Detalle();
+                Factura user = new Factura();
+                user.setIdFactura(rs.getInt("idFactura"));
                 user.setIdDetalle(rs.getInt("idDetalle"));
-                user.setNombreCliente(rs.getString("nombreCliente"));
-                user.setCedula(rs.getInt("cedula"));
-                user.setFecha(rs.getString("fecha"));
+                user.setIdProducto(rs.getInt("idProducto"));
+                user.setCantidad(rs.getInt("cantidad"));
+                user.setTotal(rs.getInt("total"));
+                user.setMetodoPago(rs.getString("metodoPago"));
                 users.add(user);
             }
         }
@@ -98,22 +104,24 @@ public class FacturaDAO
         return users;
     }
 
-    public Detalle getUserById(int idDetalle)
+    public Factura getUserById(int idDetalle)
     {
-        Detalle user = new Detalle();
+        Factura user = new Factura();
         
         try
         {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from detalle where idDetalle=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from detalle where idFactura=?");
             preparedStatement.setInt(1, idDetalle);
             ResultSet rs = preparedStatement.executeQuery();
             
             if (rs.next())
             {
+                user.setIdFactura(rs.getInt("idFactura"));
                 user.setIdDetalle(rs.getInt("idDetalle"));
-                user.setNombreCliente(rs.getString("nombreCliente"));
-                user.setCedula(rs.getInt("cedula"));
-                user.setFecha(rs.getString("fecha"));
+                user.setIdProducto(rs.getInt("idProducto"));
+                user.setCantidad(rs.getInt("cantidad"));
+                user.setTotal(rs.getInt("total"));
+                user.setMetodoPago(rs.getString("metodoPago"));
             }
         }
         catch (SQLException e)

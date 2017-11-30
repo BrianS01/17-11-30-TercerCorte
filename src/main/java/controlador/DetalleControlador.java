@@ -18,8 +18,8 @@ import modelo.Detalle;
 public class DetalleControlador extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
-    private static String INSERT_OR_EDIT = "/detalle.jsp";
-    private static String LIST_USER = "/listarDetalle.jsp";
+    private static String INSERT_OR_EDIT = "/ventaAgregarLocal.jsp";
+    private static String LIST_USER = "/ventaListarLocal.jsp";
     private DetalleDAO dao;
 
     public DetalleControlador()
@@ -45,7 +45,7 @@ public class DetalleControlador extends HttpServlet
             forward = INSERT_OR_EDIT;
             int userId = Integer.parseInt(request.getParameter("idDetalle"));
             Detalle user = dao.getUserById(userId);
-            request.setAttribute("detalle", user);
+            request.setAttribute("user", user);
         }
         else if (action.equalsIgnoreCase("listUser"))
         {
@@ -91,7 +91,7 @@ public class DetalleControlador extends HttpServlet
         }
         
         RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
-        request.setAttribute("users", dao.getAllUsers());
+        request.setAttribute("detalle", dao.getAllUsers());
         view.forward(request, response);
     }
 }

@@ -19,8 +19,8 @@ import modelo.Producto;
 public class ProductoControlador extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
-    private static String INSERT_OR_EDIT = "/producto.jsp";
-    private static String LIST_USER = "/listarProducto.jsp";
+    private static String INSERT_OR_EDIT = "/inventarioListarLocal.jsp";
+    private static String LIST_USER = "/inventarioListarLocal.jsp";
     private ProductoDAO dao;
 
     public ProductoControlador()

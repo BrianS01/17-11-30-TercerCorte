@@ -18,8 +18,8 @@ import modelo.Detalle;
 public class FacturaControlador extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
-    private static String INSERT_OR_EDIT = "/detalle.jsp";
-    private static String LIST_USER = "/listarDetalle.jsp";
+    private static String INSERT_OR_EDIT = "/ventaAgregarLocal.jsp";
+    private static String LIST_USER = "/ventaListarLocal.jsp";
     private DetalleDAO dao;
 
     public FacturaControlador()
@@ -33,19 +33,19 @@ public class FacturaControlador extends HttpServlet
         String forward = "";
         String action = request.getParameter("action");
         
-        if (action.equalsIgnoreCase("delete"))
+        if (action.equalsIgnoreCase("factura"))
         {
-            int userId = Integer.parseInt(request.getParameter("idDetalle"));
+            int userId = Integer.parseInt(request.getParameter("idFactura"));
             dao.deleteUser(userId);
             forward = LIST_USER;
-            request.setAttribute("detalle", dao.getAllUsers());
+            request.setAttribute("user", dao.getAllUsers());
         }
         else if (action.equalsIgnoreCase("edit"))
         {
             forward = INSERT_OR_EDIT;
-            int userId = Integer.parseInt(request.getParameter("idDetalle"));
+            int userId = Integer.parseInt(request.getParameter("idFactura"));
             Detalle user = dao.getUserById(userId);
-            request.setAttribute("detalle", user);
+            request.setAttribute("factura", user);
         }
         else if (action.equalsIgnoreCase("listUser"))
         {
@@ -91,7 +91,7 @@ public class FacturaControlador extends HttpServlet
         }
         
         RequestDispatcher view = request.getRequestDispatcher(LIST_USER);
-        request.setAttribute("users", dao.getAllUsers());
+        request.setAttribute("factura", dao.getAllUsers());
         view.forward(request, response);
     }
 }

@@ -3,7 +3,6 @@
  *     Program ::: Bases de Datos
  *  Credential ::: SIST0008-G01:SIV
 -->
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -61,7 +60,7 @@
                                     <li><i class="fa fa-fax"></i>Universidad Sergio Arboleda</li>
                                     <li><i class="fa fa-map-marker"></i>
                                         <address>
-                                            Calle 74 # 14-14 &amp; Bogot√° - Colombia
+                                            Calle 74 # 14-14 &amp; Bogot· - Colombia
                                         </address>
                                     </li>
                                     <li><i class="fa fa-phone"></i>Telefono<br>
@@ -71,7 +70,7 @@
                             </div>
                             <div class="one_quarter">
                                 <h6 class="title">REGISTRO</h6>
-                                <p>SNIES 1728 - Resoluci√≥n 16377 del 29 octubre de 1984 y 6423 del 05 de agosto de 2011 - Ministerio de Educaci√≥n Nacional - Acreditaci√≥n Institucional - Resoluci√≥n 590 del 09 de enero de 2015 Vigencia 4 a√±os por el Ministerio de Educaci√≥n.</p>
+                                <p>SNIES 1728 - ResoluciÛn 16377 del 29 octubre de 1984 y 6423 del 05 de agosto de 2011 - Ministerio de EducaciÛn Nacional - AcreditaciÛn Institucional - ResoluciÛn 590 del 09 de enero de 2015 Vigencia 4 aÒos por el Ministerio de EducaciÛn.</p>
                             </div>
                             <div class="one_quarter">
                                 <h6 class="title"> </h6>

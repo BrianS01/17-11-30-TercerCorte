@@ -45,9 +45,12 @@
             <main class="hoc container clear"> 
                 <div class="content"> 
                     <div id="gallery">
-                        <figure>
                             <header class="heading">Gallery Title Goes Here</header>
-                    </div><div class="wrapper row4">
+                    </div>
+                    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+                        <input type="button" value="Galeria de Arte" onclick="window.location.href='indexLocal.html'" />
+                    </button>
+                    <div class="wrapper row4">
                         <footer id="footer" class="hoc clear"> 
                             <div class="one_quarter first">
                                 <h6 class="title"> </h6>
