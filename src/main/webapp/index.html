@@ -1,5 +1,9 @@
 <!-- 
- *      Author ::: Brian Sterling
+ *  PROYECTO TERCER CORTE
+ *   co-Author :::   Juan Albarracin
+ *   co-Author :::  Mario Bolaños
+ *   co-Author ::: Sergio Orozco
+ *   co-Author :::  Brian Sterling
  *     Program ::: Bases de Datos
  *  Credential ::: SIST0008-G01:SIV
 -->
@@ -8,132 +12,51 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>MONTESALVO</title>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-            .w3-row-padding img {margin-bottom: 12px}
-            .bgimg
-            {
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-image: url('imagenes/prologo.jpg');
-                min-height: 100%;
-            }
-        </style>
-    </head>   
-    <body>
-        <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
-            <div class="bgimg"></div>
-        </nav>
-        <nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
-                <i class="fa fa-remove"></i>
-            </a>
-            <div class="w3-bar-block w3-center">
-                <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
-                <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Galeria de Arte</a>
-                <a href="VideoIndex.jsp" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Video Tienda</a>
-                <a href="indexAsegura.jsp" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Aseguradora</a>
-                <a href="indexLocal.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Local Comercial</a>
-            </div>
-        </nav>
-        <div class="w3-main w3-padding-large" style="margin-left:40%">
-            <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
-            <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-                <h1 class="w3-jumbo"><b>Montesalvo</b></h1>
-                <p>Grupo Empresarial</p>
-                <img src="imagenes/prologo.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
-                <img src="imagenes/prologo.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
-            </header>
-            <center>
-                <table>
-                    <tr>
-                        <th>
-                            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-                                <input type="button" value="Galeria de Arte" onclick="window.location.href='indexLocal.html'" />
-                            </button>
-                        </th>
-                        <th>
-                            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-                                <input type="button" value="Video Tienda" onclick="window.location.href='VideoIndex.jsp'" />
-                            </button>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-                                <input type="button" value="Aseguradora" onclick="window.location.href='indexAsegura.jsp'" />
-                            </button>
-                        </th>
-                        <th>
-                            <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
-                                <input type="button" value="Local Comercial" onclick="window.location.href='indexLocal.html'" />
-                            </button>
-                        </th>
-                    </tr>
-                </table>
-            </center>
-            <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
-                <h3 class="w3-padding-16">Grupo de Trabajo</h3>
-                <p class="w3-wide">Cualquier poder, si no se basa en la unión, es débil.</p>
-                <br>
-                <div class="w3-row w3-center w3-dark-grey w3-padding-16 w3-section">
-                    <div class="w3-quarter w3-section">
-                        <span class="w3-xlarge">Juan</span><br>
-                                                Albarracin
+        <link rel="shortcut icon" href="images/VLCicono.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+        <title>Ingreso</title>
+    </head>
+    <body background="imagenes/inicio.jpg">
+        <center>
+            <div class="container">
+                <div class="top">
+                    <h1 id="title" class="hidden" style="color:white;"><span id="logo">Grupo Empresarial<span> Montesalvo</span></span></h1>
+                </div>
+                <div class="login-box animated fadeInUp">
+                    <div class="box-header">
+                        <h2 style="color:white;">ENTRAR</h2>
                     </div>
-                    <div class="w3-quarter w3-section">
-                        <span class="w3-xlarge">Mario</span><br>
-                                                Bolaños
-                    </div>
-                    <div class="w3-quarter w3-section">
-                        <span class="w3-xlarge">Sergio</span><br>
-                                                Orozco
-                    </div>
-                    <div class="w3-quarter w3-section">
-                        <span class="w3-xlarge">Brian</span><br>
-                                                Sterling
-                    </div>
+                    <form name="login">
+                        <label for="username">Nombre</label>
+                        <br/>
+                        <input type="text" name="userid"/>
+                        <br/>
+                        <label for="password">Contraseña</label>
+                        <br/>
+                        <input type="password" name="pswrd"/>
+                        <br/>
+                    <input type="button" onclick="check(this.form)" value="Ingresar"/>
+                    <script language="javascript">
+                        function check(form)/*function to check userid & password*/
+                        {
+                            /*the following code checkes whether the entered userid and password are matching*/
+                            if (form.userid.value === "admin" && form.pswrd.value === "bases")
+                            {
+                                window.open('inicio.html');/*opens the target page while Id & password matches*/
+                            }
+                            else
+                            {
+                                alert("Error Password or Username");/*displays error message*/
+                            }
+                        }
+                    </script>
+                    <a href="#">
+                        <p class="small">Olvido su Contraseña</p>
+                        <p class="small">Contacte al Administrador del Servicio</p>
+                    </a>
                 </div>
             </div>
-            <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
-                <h2>Informacion</h2>
-                <hr class="w3-opacity">
-                <p class="w3-wide">Universidad Sergio Arboleda</p>
-                <div class="w3-section">
-                    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Bogota, Colombia</p>
-                    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Telefono: (+571) 325 8181</p>
-                    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: juan.albarracin@correo.usa.edu.co</p>
-                    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mario.bolaños@correo.usa.edu.co</p>
-                    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: sergio.orozco@correo.usa.edu.co</p>
-                    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: brian.sterling@correo.usa.edu.co</p>
-                </div>
-            </div>  
-            <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-                <i class="fa fa-instagram w3-hover-opacity"></i>
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-                <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
-                <p class="w3-medium">Copyright &copy; 2017 - All Rights Reserved - Grupo Empresarial Montesalvo S.A.</p>
-            </footer>
-            <script>
-                function openNav()
-                {
-                    document.getElementById("mySidebar").style.width = "60%";
-                    document.getElementById("mySidebar").style.display = "block";
-                }
-
-                function closeNav()
-                {
-                    document.getElementById("mySidebar").style.display = "none";
-                }
-            </script>
-        </div>
+        </center>
     </body>
 </html>

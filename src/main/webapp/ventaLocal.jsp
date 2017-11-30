@@ -27,7 +27,7 @@
                                 <li><a href="ventaLocal.jsp">VENTAS</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="inicio.html">Home</a></li>
                     </ul>
                 </nav>
             </header>
